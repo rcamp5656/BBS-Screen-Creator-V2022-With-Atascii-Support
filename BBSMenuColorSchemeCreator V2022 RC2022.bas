@@ -8,13 +8,15 @@ Dim b As String * 1
 Dim lnumber As String ' used as a variable for the line number of the ascii screen
 Dim file As String ' used as a variable for the filename entered in the program
 Dim answer As String ' used as a variable for the answer to a question
-Dim asciidisp As String ' ascii display variable used as the ascii display path
+Dim asciidisp_1 As String ' ascii display variable used as the ascii display path
+Dim asciidisp_2 As String
 Dim ansidisp As String ' ansi display variable used as the ansi path and filename
 Dim wc8disp As String 'Winserver 8 variable used as the wc8 BBS display path
 Dim pcbdisp As String 'Pc Board display variable used as the pcb display path
 Dim asciipromptmenu As String
 Dim syndisp As String 'Syncronet display variabe used as the Syncronet display path
-Dim asciimenu As String 'ascii menu variable used as the ascii menu path for input
+Dim asciimenu_2 As String 'ascii menu variable used as the ascii menu path for input
+Dim asciimenu_1 As String
 Dim atasciimenu As String 'ATASCII menu character display
 Dim atasciidisp As String 'ATASCII disp character display
 Dim wc8display As String
@@ -122,7 +124,7 @@ Print "%                     BBS Screen Creator Written By Russ Campbell        
 Locate 12, 24
 Print "%                                                                              %"
 Locate 13, 24
-Print "%           ***       Alpha Version 2020 Release Candidate RC2020     ***      %"
+Print "%           ***       Alpha Version 2020 Release Candidate RC2020_2     ***    %"
 Locate 14, 24
 Print "%                                                                              %"
 Locate 15, 24
@@ -132,7 +134,7 @@ Print "%                                                                        
 Locate 17, 24
 Print "%             Now with ATASCII charcter sets added (Fully Functional)          %"
 Locate 18, 24
-Print "%                                                                              %"
+Print "%                      Updated on January 12th at 4:18 PM                      %"
 Locate 19, 24
 Print "%                    Press any key to continue.............                    %"
 Locate 20, 24
@@ -428,13 +430,17 @@ If file = "file6" Then menuchoice = "M"
 If file = "file9" Then menuchoice = "M"
 If file = "sysop8" Then menuchoice = "M"
 If file = "sysop9" Then menuchoice = "M"
+If file = "prelog" Then menuchoice = "D"
+If file = "title" Then menuchoice = "D"
+If file = "goodbye" Then menuchoice = "D"
+If file = "hello1" Then menuchoice = "D"
 If menuchoice <> "M" Then menuchoice = "D"
 displays:
 
 Cls
 Print "Output display [A] Any Ansi BBS    [B] Wildcat 5-8 BBS  [C] PCboard BBS   "
 Print "Output Display [D] Synchronet BBS  [E] Mystic BBS  [F] ATASCII BBS Files  " 'which BBS display the user wants
-Print "Output Display [G] Ascii Conversion program."
+'Print "Output Display [G] Ascii Conversion program."
 answer = Input$(1)
 answer = UCase$(answer)
 If answer = "A" Then display = "ansi": GoTo menu
@@ -443,7 +449,7 @@ If answer = "C" Then display = "pcb": GoTo menu
 If answer = "D" Then display = "synchro": GoTo menu
 If answer = "E" Then display = "mystic": GoTo menu
 If answer = "F" Then display = "atascii": GoTo menu
-If answer = "G" Then display = "convert": GoTo menu
+'If answer = "G" Then display = "convert": GoTo menu
 GoTo displays
 
 
@@ -567,7 +573,7 @@ If pick = 3 Then
 
 End If
 If pick = 4 Then
-    corner1a = Chr$(17)
+    corner1a = Chr$(35)
     corner2a = Chr$(35) ' corner character for new corners of new box output
     corner3a = Chr$(35)
     corner4a = Chr$(35)
@@ -581,6 +587,67 @@ If pick = 4 Then
     rightverticallinea = Chr$(35)
     leftverticallinea = Chr$(35)
 End If
+If pick = 5 Then
+    corner1a = Chr$(61)
+    corner2a = Chr$(61) ' corner character for new corners of new box output
+    corner3a = Chr$(61)
+    corner4a = Chr$(61)
+    connector1a = Chr$(61)
+    connector2a = Chr$(61) 'various connectors for lines in boxes
+    connector3a = Chr$(61)
+    connector4a = Chr$(61)
+    toplineconnectora = Chr$(61) ' Horizontal line character for new box output
+    middlelineconnectora = Chr$(61)
+    bottomlineconnectora = Chr$(61)
+    rightverticallinea = Chr$(61)
+    leftverticallinea = Chr$(61)
+End If
+If pick = 6 Then
+    corner1a = Chr$(43)
+    corner2a = Chr$(43) ' corner character for new corners of new box output
+    corner3a = Chr$(43)
+    corner4a = Chr$(43)
+    connector1a = Chr$(43)
+    connector2a = Chr$(43) 'various connectors for lines in boxes
+    connector3a = Chr$(43)
+    connector4a = Chr$(43)
+    toplineconnectora = Chr$(43) ' Horizontal line character for new box output
+    middlelineconnectora = Chr$(43)
+    bottomlineconnectora = Chr$(43)
+    rightverticallinea = Chr$(43)
+    leftverticallinea = Chr$(43)
+End If
+If pick = 7 Then
+    corner1a = Chr$(94)
+    corner2a = Chr$(94) ' corner character for new corners of new box output
+    corner3a = Chr$(94)
+    corner4a = Chr$(94)
+    connector1a = Chr$(94)
+    connector2a = Chr$(94) 'various connectors for lines in boxes
+    connector3a = Chr$(94)
+    connector4a = Chr$(94)
+    toplineconnectora = Chr$(94) ' Horizontal line character for new box output
+    middlelineconnectora = Chr$(94)
+    bottomlineconnectora = Chr$(94)
+    rightverticallinea = Chr$(94)
+    leftverticallinea = Chr$(94)
+End If
+If pick = 8 Then
+    corner1a = Chr$(60)
+    corner2a = Chr$(60) ' corner character for new corners of new box output
+    corner3a = Chr$(60)
+    corner4a = Chr$(60)
+    connector1a = Chr$(60)
+    connector2a = Chr$(60) 'various connectors for lines in boxes
+    connector3a = Chr$(60)
+    connector4a = Chr$(60)
+    toplineconnectora = Chr$(60) ' Horizontal line character for new box output
+    middlelineconnectora = Chr$(60)
+    bottomlineconnectora = Chr$(60)
+    rightverticallinea = Chr$(60)
+    leftverticallinea = Chr$(60)
+End If
+
 Return
 
 menu:
@@ -616,14 +683,14 @@ file8 = file + ".txt"
 file9 = file + ".asc"
 If display = "convert" Then
     wc8display = "c:\display\bbsdispwildcat\" + file0
-    type2$ = wc8display
+    types$2 = wc8display
 End If
 If display = "atascii" Then
-    asciidisp = "c:\display\bbsdispascii40\" + file1
+    asciidisp_1 = "c:\display\bbsdispascii40\" + file1
     type1$ = atasciidisp
 Else
-    asciidisp = "c:\display\bbsdispascii\" + file1
-    type1$ = asciidisp
+    asciidisp_2 = "c:\display\bbsdispascii\" + file1
+    type1 = asciidisp
 End If
 ansidisp = "c:\display\bbsdispansi\" + file2
 type2$ = ansidisp
@@ -636,10 +703,10 @@ type2$ = syndisp
 mysdisp = "c:\display\bbsdispmystic\" + file6
 type2$ = mysdisp
 If display = "atascii" Then
-    asciimenu = "c:\display\bbsmenuascii40\" + file1
+    asciimenu_1 = "c:\display\bbsmenuascii40\" + file1
 Else
-    asciimenu = "c:\display\bbsmenuascii\" + file1
-    type1$ = asciimenu
+    asciimenu_2 = "c:\display\bbsmenuascii\" + file1
+    type1 = asciimenu
 End If
 ansimenu = "c:\display\bbsmenuansi\" + file2 ' for various screen ouputs
 type3$ = ansimenu
@@ -665,9 +732,12 @@ If menuchoice = "D" Then
     Else
         GoSub selector
     End If
-    On Error GoTo errorhandle
-    Open asciidisp For Input As #1
-
+    If display = "atascii" Then
+        On Error GoTo errorhandle
+        Open asciidisp_1 For Input As #1
+    Else
+        Open asciidisp_2 For Input As #1
+    End If
     If display = "ansi" Then
         Open ansidisp For Output As #2
     End If
@@ -694,7 +764,7 @@ If menuchoice = "D" Then
         Open wc8display For Input As #1
         Open asciidisplay For Output As #2
     End If
-    GoTo convertit
+    GoTo contprog
 End If
 
 If menuchoice = "M" Then
@@ -706,11 +776,14 @@ If menuchoice = "M" Then
     Else
         GoSub selector
     End If
-    'On Error GoTo errorhandle
-    Open asciimenu For Input As #1
-    'On Error GoTo errorhandle
+    If display = "atascii" Then
+        'On Error GoTo errorhandle
+        Open asciimenu_1 For Input As #1
+        'On Error GoTo errorhandle
+    Else
+        Open asciimenu_2 For Input As #1
+    End If
     Open asciipromptmenu For Input As #3
-
     If display = "ansi" Then
         Open ansimenu For Output As #2
     End If
@@ -768,6 +841,7 @@ End If
 If display = "atascii" Then
     Cls
 End If
+Print
 Print "The Display that is Being Output to Disk is : "; display
 If menuchoice = "M" Then
     Cls
@@ -1383,7 +1457,7 @@ Do Until EOF(1)
                         ElseIf colorchanges = 0 Then
                             zz = Asc(b) + 128
                             Print #2, Chr$(zz);
-                            Print Chr$(2);
+                            Print b;
                         End If
 
                     ElseIf b1 = 4 Then
