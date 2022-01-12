@@ -1,0 +1,6 @@
+
+Time Left : 
+@USER.TIMELEFTTODAY@  
+Total Time Online : 
+@USER.MINUTESLOGGED@
+Main Menu Command >>  
